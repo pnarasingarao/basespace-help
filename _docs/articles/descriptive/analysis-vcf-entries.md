@@ -8,7 +8,7 @@ The VCF files for Analysis can have the following entries in the FILTER, FORMAT,
 ---
 
 **Table**: VCF FILTER Entries
-<table border="1">
+<table class="table table-bordered">
 	<tr>
 		<th>Entry</th>
 		<th>DEscription</th>
@@ -46,7 +46,7 @@ The VCF files for Analysis can have the following entries in the FILTER, FORMAT,
 ---
 
 **Table**: VCF FORMAT Entries
-<table border="1">
+<table class="table table-bordered">
 	<tr>
 		<th>Entry</th>
 		<th>DEscription</th>
@@ -84,7 +84,7 @@ The VCF files for Analysis can have the following entries in the FILTER, FORMAT,
 ---
 
 **Table**: VCF INFO Entries
-<table border="1">
+<table class="table table-bordered">
 	<tr>
 		<th>Entry</th>
 		<th>DEscription</th>

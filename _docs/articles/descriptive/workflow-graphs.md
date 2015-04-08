@@ -20,7 +20,7 @@ Use the Low Percentage Graph to judge sequencing metrics for a sample. This grap
 This graph is not a good predictor of yields or quality of final results.
 
 ###How to use it
-<table border="1">
+<table class="table table-bordered">
 	<tr>
 		<th>Metric</th>
 		<th>Description</th>
@@ -67,7 +67,7 @@ Use the High Percentage Graph to judge sequencing metrics for a sample. This gra
 Do not use the High Percentage Graph to look at tertiary analysis metrics.
 
 ###How to use it
-<table border="1">
+<table class="table table-bordered">
 	<tr>
 		<th>Metric</th>
 		<th>Description</th>
@@ -127,7 +127,7 @@ Do not use the Clusters Graph to look at tertiary analysis metrics.
 ###How to use it
 A cluster represents a clonal spot on the flow cell that contains the amplified DNA strands to be sequenced.
 
-<table border="1">
+<table class="table table-bordered">
 	<tr>
 		<th>X axis</th>
 		<th>Description</th>

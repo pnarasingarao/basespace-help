@@ -54,7 +54,7 @@ For the Undetermined FASTQ files only, the sequence observed in the index read i
 
 The following table describes the elements:
 
-<table border="1">
+<table class="table table-bordered">
 	<tr>
 		<th>Element</th>
 		<th>Requirements</th>

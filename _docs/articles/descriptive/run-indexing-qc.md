@@ -18,7 +18,7 @@ This page only provides indexing information. Do not use it for runs that were n
 You can select the displayed lane through the drop-down list.
 The first table provides an overall summary of the indexing performance for that lane, including:
 
-<table border="1">
+<table class="table table-bordered">
 	<tr>
 		<td>Total Reads</td>
 		<td>The total number of reads for this lane</td>
@@ -47,7 +47,7 @@ The first table provides an overall summary of the indexing performance for that
 
 Further information is provided regarding the frequency of individual indexes in both table and graph form. The table contains several columns, including
 
-<table border="1">
+<table class="table table-bordered">
 	<tr>
 		<td>Index Number</td>
 		<td>A unique number assigned to each index by BaseSpace for display purposes</td>

@@ -35,7 +35,7 @@ The following table is for reference purposes only. For details about creating o
 
 **Table** :  Sample Sheet Fields
 
-<table border="1">
+<table class="table table-bordered">
 	<tr>
 		<th>Row</th>
 		<th>Description</th>
