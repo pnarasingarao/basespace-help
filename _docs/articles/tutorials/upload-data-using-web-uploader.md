@@ -22,8 +22,8 @@ FASTQ files need to adhere to Illumina standards, as specified below:
  - Data for a single sample can constitute multiple files. The total number of files per sample and their combined size are limited to 16 and 25 GB respectively.
  - The uploader will only support gzipped FASTQ files generated on Illumina instruments.
  - The name of the FASTQ files must conform the following convention:
-	 SampleName_SampleNumber_Lane_Read_FlowCellIndex.fastq.gz 
-	 (i.e. SampleName_S1_L001_R1_001.fastq.gz / SampleName_S1_L001_R2_001.fastq.gz)
+	 `SampleName_SampleNumber_Lane_Read_FlowCellIndex.fastq.gz`
+	 (i.e. `SampleName_S1_L001_R1_001.fastq.gz` / `SampleName_S1_L001_R2_001.fastq.gz`)
  - The read descriptor in the FASTQ files must conform to the following convention:
 	@Instrument:RunID:FlowCellID:Lane:Tile:X:Y ReadNum:FilterFlag:0:SampleNumber:
 	- Read 1 descriptor would look like this:
