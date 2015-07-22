@@ -8,11 +8,11 @@ The main mechanism to interact with your BaseSpace data is via the website at [w
 
 This is the concept behind our first major BaseSpace command line tool, BaseMount, a [FUSE](https://en.wikipedia.org/wiki/Filesystem_in_Userspace "FUSE driver") that allows command line read access to your [BaseSpace](https://basespace.illumina.com "BaseSpace") data.
 
-##What is BaseMount
+##What is BaseMount?
 [BaseMount](https://basemount.basespace.illumina.com "BaseMount") is a tool to mount your BaseSpace data as a Linux file system. You can navigate through projects, samples, runs and app results and interact directly with the associated files exactly as you would with any other local file system. BaseMount is a [FUSE](https://en.wikipedia.org/wiki/Filesystem_in_Userspace "FUSE driver"), which operates in user-space and uses the [BaseSpace API](https://developer.basespace.illumina.com "BaseSpace API") to populate the contents of each directory.
 
 ##BaseMount Installation
-[BaseMount](https://basemount.basespace.illumina.com "BaseMount") installation instructions can be found here: [basemount.basespace.illumina.com](http://basemount.basespace.illumina.com/). Installation requires sudo access, and CentOS requires a 'fuse' group. Non-sudo users can use [BaseMount](https://basemount.basespace.illumina.com "BaseMount") if they are members of the 'fuse' group. To run [BaseMount](https://basemount.basespace.illumina.com "BaseMount") in docker, the container must be run in privileged mode.
+[BaseMount](https://basemount.basespace.illumina.com "BaseMount") installation instructions can be found here: [basemount.basespace.illumina.com](http://basemount.basespace.illumina.com/). Installation requires root access. Non-root CentOS users need to be added to 'fuse' user group by the administrator before being able to run [BaseMount](https://basemount.basespace.illumina.com "BaseMount"). To run [BaseMount](https://basemount.basespace.illumina.com "BaseMount") inside a docker container, the container must be run in privileged mode.
 
 ##Authentication
 The first time you run [BaseMount](https://basemount.basespace.illumina.com "BaseMount"), you will be directed to a web URL and asked to enter your BaseSpace user credentials. BaseMount will use these credentials to authenticate your interactions with BaseSpace. By default, the credentials are cached in your home directory and they can be password-encrypted for security, just like an ssh key.
@@ -26,12 +26,12 @@ BaseMount mimics the structure of the major resources represented in the API.  T
 ![API Users/Current](/images/articles/api-users-current.png)
 
 ###Root
-Runs and Projects are the two root directories, inside each is just a list of the runs or projects that you have access too.
+Runs and Projects are the two root directories, which contain sub-directories with the names of the runs/projects that you have access too.
 
 ![Root](/images/articles/tree-root.png)
 
-###Project Detail
-Inside a specific project you would find the following directories:
+###Project Details
+Inside each project directory you would find the following sub-directories:
 
 ![Project Detail](/images/articles/tree-project.png)
 
@@ -40,7 +40,7 @@ Inside a specific project you would find the following directories:
 - **Samples** directory contains the flattened list of Samples that are in the project and will have a Files directory containing your fastq.gz files.
 
 ###MetaData
-In each directory, BaseMount provides a number of hidden files with extra BaseSpace metadata. These hidden files follow the Unix convention of starting with a . and can be seen with the following:
+In each directory, BaseMount provides a number of hidden files with extra BaseSpace metadata. These hidden files follow the Unix convention of starting with a "." and can be seen using the command:
 ```
 ls -a
 ```
@@ -64,7 +64,7 @@ You can use BaseMount to download your BaseSpace data to a local filesystem. Jus
 
 Although BaseMount does facilitate file download, we would recommend that since BaseMount allows convenient, fast, cached access to your BaseSpace metadata and files, you may find that many operations can be carried out without the need to download locally. During our testing, we have used BaseMount to grep through fastq files, extract blocks of reads from bam files and even use IGV on the bam files directly all without downloading files locally. This can be more convenient than including a download step and saves on the overheads of local storage.
 
-##Limitations of BaseMount *Alpha*
+##Limitations of BaseMount *Alpha* v0.1.2
 Every new directory access made by BaseMount relies on FUSE, the BaseSpace API and the user's credentials. This mechanism means that, as currently available, BaseMount does not support the following types of access:
 
 
@@ -76,13 +76,20 @@ Every new directory access made by BaseMount relies on FUSE, the BaseSpace API a
 - In general, lots of concurrent requests can cause stability issues on a resource constrained system.  Keep in mind, this is an early release and stability will increase.
 
 ##Minimum Hardware Requirements and System-Level Settings
-Tested on the following operating systems:
+We have tested the BaseMount *Alpha* v0.1.2 release on the following systems:
+
+Supported Operating Systems:
 
 
-- Ubuntu 14, Ubuntu 15, CentOS 6.5, CentOS 7
-- Minimum 4GB RAM
-- Minimum 4 cores
-- Minimum 5GB /tmp
+- Ubuntu 14 & 15
+- CentOS 6.5 & 7
+
+Minimum Hardware requirements:
+
+
+- RAM: 4GB 
+- Processors: 4 cores
+- Disk: 5GB /tmp
 
 With the following ulimit thresholds:
 
