@@ -11,6 +11,9 @@ This is the concept behind our first major BaseSpace command line tool, BaseMoun
 ##What is BaseMount
 [BaseMount](https://basemount.basespace.illumina.com "BaseMount") is a tool to mount your BaseSpace data as a Linux file system. You can navigate through projects, samples, runs and app results and interact directly with the associated files exactly as you would with any other local file system. BaseMount is a [FUSE](https://en.wikipedia.org/wiki/Filesystem_in_Userspace "FUSE driver"), which operates in user-space and uses the [BaseSpace API](https://developer.basespace.illumina.com "BaseSpace API") to populate the contents of each directory.
 
+##BaseMount Installation
+[BaseMount](https://basemount.basespace.illumina.com "BaseMount") installation instructions can be found here: [**PLACEHOLDER**]. Installation requires sudo access, and CentOS requires a 'fuse' group. Non-sudo users can use [BaseMount](https://basemount.basespace.illumina.com "BaseMount") if they are members of the 'fuse' group. To run [BaseMount](https://basemount.basespace.illumina.com "BaseMount") in docker, the container must be run in privileged mode.
+
 ##Authentication
 The first time you run [BaseMount](https://basemount.basespace.illumina.com "BaseMount"), you will be directed to a web URL and asked to enter your BaseSpace user credentials. BaseMount will use these credentials to authenticate your interactions with BaseSpace. By default, the credentials are cached in your home directory and they can be password-encrypted for security, just like an ssh key.
 
@@ -45,17 +48,16 @@ ls -a
 These metadata files are:
 
 -  **.json**: the result of the raw BaseSpace API query. This includes metadata associated with the relevant BaseSpace entity, so for example a sample's metadata includes the number and length of reads, the number of reads passing filter etc.
--  **.type**: the BaseSpace entity type for this directory
--  **.id**: The BaseSpace ID for this entity
+-  **.curl**: the raw API request for this entity
+
+###Access By Entity Id
+In each directory, BaseMount provides hidden symlinks to the human-readable named entity folders, with the **.id** prefix. These allow navigation through a users directories by entity ID's rather than names. 
 
 ###File-level Access
 At various appropriate levels, BaseMount provides access to the raw files available in your BaseSpace account. For example, the fastq.gz files associated with a sample. 
 
 This file access is provided by BSFS, the mechanism used by the BaseSpace native app engine to expose BaseSpace files for app runs. BSFS uses HTTPS to expose files at the block level so users can make an access into the middle of a file without needing to download all the proceeding blocks, such as when using a tabix or bam index. BSFS also provides caching features to make repeated access of the same file more efficient.
 
-{% callout note, NOTE %}
-The Alpha release of BaseMount creates many BSFS instances, one for each Files directory.  Depending on the type of access patterns and resources available having lots of active mounts can cause stability issues.  This is a known issue and will be resolved in future releases.
-{% endcallout%}
 
 ##Downloading Data
 You can use BaseMount to download your BaseSpace data to a local filesystem. Just use **cp**, **rsync** or any command line tool you prefer to copy the files from your BaseMount space to your chosen destination. 
@@ -67,7 +69,7 @@ Every new directory access made by BaseMount relies on FUSE, the BaseSpace API a
 
 
 
-- Shared file access, where multiple users can read the same files
+
 - Cluster access, where many compute nodes can access the files. FUSE mounted file systems are per-host and cannot be accessed from many hosts without additional infrastructure.
 - BaseMount also doesn't refresh files or directories. In order to reflect changes done via the Web GUI in your command line tree, you currently need to unmount (basemount --unmount <mountpoint>) and restart BaseMount.
 - The Runs Files directory is not mounted automatically for you as there can be 100k + files available in that mount which can take a couple minutes to load for really large runs.  You can still mount this directory manually if needed.
@@ -77,17 +79,16 @@ Every new directory access made by BaseMount relies on FUSE, the BaseSpace API a
 Tested on the following operating systems:
 
 
-- Ubuntu 14, CentOS 6.5
+- Ubuntu 14, Ubuntu 15, CentOS 6.5, CentOS 7
 - Minimum 4GB RAM
+- Minimum 4 cores
 - Minimum 5GB /tmp
 
 With the following ulimit thresholds:
 
 
-
-- The "maximum number of user processes" (set by `ulimit -u`) must be 1024 or above.
-- The "maximum number of open file descriptors" (set by `ulimit -n`) must be 1024 or above.
-- The "maximum stack size" (set by `ulimit -s`) may be 'unlimited' or less (tested with "unlimited", which is our worst case).
+- Default settings for CentOS (-l 64, -m unlimited, -n 1024, -s 10240, -u 4553)
+- Default settings for Ubuntu (-l 64, -m unlimited, -n 1024, -s 8192, -u 15722)
 
 
 ##Tutorial Videos
