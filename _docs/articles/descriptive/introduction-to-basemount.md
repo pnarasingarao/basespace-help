@@ -14,6 +14,28 @@ This is the concept behind our first major BaseSpace command line tool, BaseMoun
 ##BaseMount Installation
 [BaseMount](https://basemount.basespace.illumina.com "BaseMount") installation instructions can be found here: [basemount.basespace.illumina.com](http://basemount.basespace.illumina.com/). Installation requires root access. Non-root CentOS users need to be added to 'fuse' user group by the administrator before being able to run [BaseMount](https://basemount.basespace.illumina.com "BaseMount"). To run [BaseMount](https://basemount.basespace.illumina.com "BaseMount") inside a docker container, the container must be run in privileged mode.
 
+##Minimum Hardware Requirements and System-Level Settings
+We have tested the BaseMount *Alpha* v0.1.2 release on the following systems:
+
+Supported Operating Systems:
+
+
+- Ubuntu 14 & 15
+- CentOS 6.5 & 7
+
+Minimum Hardware requirements:
+
+
+- RAM: 4GB 
+- Processors: 4 cores
+- Disk: 5GB /tmp
+
+With the following ulimit thresholds:
+
+
+- Default settings for CentOS (-l 64, -m unlimited, -n 1024, -s 10240, -u 4553)
+- Default settings for Ubuntu (-l 64, -m unlimited, -n 1024, -s 8192, -u 15722)
+
 ##Authentication
 The first time you run [BaseMount](https://basemount.basespace.illumina.com "BaseMount"), you will be directed to a web URL and asked to enter your BaseSpace user credentials. BaseMount will use these credentials to authenticate your interactions with BaseSpace. By default, the credentials are cached in your home directory and they can be password-encrypted for security, just like an ssh key.
 
@@ -74,28 +96,6 @@ Every new directory access made by BaseMount relies on FUSE, the BaseSpace API a
 - BaseMount also doesn't refresh files or directories. In order to reflect changes done via the Web GUI in your command line tree, you currently need to unmount (basemount --unmount <mountpoint>) and restart BaseMount.
 - The Runs Files directory is not mounted automatically for you as there can be 100k + files available in that mount which can take a couple minutes to load for really large runs.  You can still mount this directory manually if needed.
 - In general, lots of concurrent requests can cause stability issues on a resource constrained system.  Keep in mind, this is an early release and stability will increase.
-
-##Minimum Hardware Requirements and System-Level Settings
-We have tested the BaseMount *Alpha* v0.1.2 release on the following systems:
-
-Supported Operating Systems:
-
-
-- Ubuntu 14 & 15
-- CentOS 6.5 & 7
-
-Minimum Hardware requirements:
-
-
-- RAM: 4GB 
-- Processors: 4 cores
-- Disk: 5GB /tmp
-
-With the following ulimit thresholds:
-
-
-- Default settings for CentOS (-l 64, -m unlimited, -n 1024, -s 10240, -u 4553)
-- Default settings for Ubuntu (-l 64, -m unlimited, -n 1024, -s 8192, -u 15722)
 
 
 ##Tutorial Videos
