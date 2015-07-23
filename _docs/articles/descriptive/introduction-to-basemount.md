@@ -4,7 +4,7 @@ title: Introduction To BaseMount
 ---
 
 ##Overview
-The main mechanism to interact with your BaseSpace data is via the website at [www.basespace.com](https://basespace.illumina.com). However, for some use-cases, it can be useful to work with the same data using the Linux command line interface (CLI). This allows direct ad-hoc programmatic access so that users can write ad-hoc scripts and use tools like find, xargs and command line loops to work with their data in bulk.
+The main mechanism to interact with your BaseSpace data is via the website at [www.basespace.illumina.com](https://basespace.illumina.com). However, for some use-cases, it can be useful to work with the same data using the Linux command line interface (CLI). This allows direct ad-hoc programmatic access so that users can write ad-hoc scripts and use tools like find, xargs and command line loops to work with their data in bulk.
 
 This is the concept behind our first major BaseSpace command line tool, BaseMount, a [FUSE](https://en.wikipedia.org/wiki/Filesystem_in_Userspace "FUSE driver") that allows command line read access to your [BaseSpace](https://basespace.illumina.com "BaseSpace") data.
 
