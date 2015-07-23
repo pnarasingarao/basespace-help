@@ -4,7 +4,7 @@ title: Introduction To BaseMount
 ---
 
 ##Overview
-The main mechanism to interact with your BaseSpace data is via the website at [www.basespace.com](https://basespace.illumina.com). However, for some use-cases, it can be useful to work with the same data using the Linux command line interface (CLI). This allows direct ad-hoc programmatic access so that users can write ad-hoc scripts and use tools like find, xargs and command line loops to work with their data in bulk.
+The main mechanism to interact with your BaseSpace data is via the website at [www.basespace.illumina.com](https://basespace.illumina.com). However, for some use-cases, it can be useful to work with the same data using the Linux command line interface (CLI). This allows direct ad-hoc programmatic access so that users can write ad-hoc scripts and use tools like find, xargs and command line loops to work with their data in bulk.
 
 This is the concept behind our first major BaseSpace command line tool, BaseMount, a [FUSE](https://en.wikipedia.org/wiki/Filesystem_in_Userspace "FUSE driver") that allows command line read access to your [BaseSpace](https://basespace.illumina.com "BaseSpace") data.
 
@@ -56,6 +56,19 @@ With the following ulimit thresholds:
 
 - Default settings for CentOS (-l 64, -m unlimited, -n 1024, -s 10240, -u 4553)
 - Default settings for Ubuntu (-l 64, -m unlimited, -n 1024, -s 8192, -u 15722)
+
+
+##Mounting Your BaseSpace Account
+After successful installation, you can then mount your [BaseSpace](https://basespace.illumina.com "BaseSpace") account with [BaseMount](https://basemount.basespace.illumina.com "BaseMount"). Basic usage is as follows:
+
+    basemount --config {config_file_prefix} {mount-point folder}
+
+where the --config parameter is optional, and useful when a user has multiple basespace accounts to be mounted. The prefix is used to create a prefix.cfg file in the ~/.basespace/ directory. The mount point directory is going to be the top level folder in your mounted file tree.
+
+Example:
+
+    mkdir ~/BaseSpace_Mount    
+    basemount --config user1 ~/BaseSpace_Mount
 
 
 ##Authentication
@@ -119,6 +132,9 @@ Every new directory access made by BaseMount relies on FUSE, the BaseSpace API a
 - The Runs Files directory is not mounted automatically for you as there can be 100k + files available in that mount which can take a couple minutes to load for really large runs.  You can still mount this directory manually if needed.
 - In general, lots of concurrent requests can cause stability issues on a resource constrained system.  Keep in mind, this is an early release and stability will increase.
 
+## Feedback
+
+Please visit our [BaseSpace google group](https://groups.google.com/forum/#!forum/basespace-developers) for inquiries and to submit feedback. 
 
 ##Tutorial Videos
 
@@ -138,20 +154,20 @@ Every new directory access made by BaseMount relies on FUSE, the BaseSpace API a
 
 {% step 4, , Projects, Runs, Samples %}
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/VPMFKhNRYjU" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/afP7SogrcQs" frameborder="0" allowfullscreen></iframe>
 
 {% endstep %}
 
 
 {% step 5, ,  AppSessions and AppResults %}
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/VPMFKhNRYjU" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FDRQLN5etCM" frameborder="0" allowfullscreen></iframe>
 
 {% endstep %}
 
 {% step 6, ,  Access Large Files %}
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/VPMFKhNRYjU" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zCkRIKW3rZU" frameborder="0" allowfullscreen></iframe>
 
 {% endstep %}
 
