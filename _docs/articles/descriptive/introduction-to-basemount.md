@@ -12,7 +12,28 @@ This is the concept behind our first major BaseSpace command line tool, BaseMoun
 [BaseMount](https://basemount.basespace.illumina.com "BaseMount") is a tool to mount your BaseSpace data as a Linux file system. You can navigate through projects, samples, runs and app results and interact directly with the associated files exactly as you would with any other local file system. BaseMount is a [FUSE](https://en.wikipedia.org/wiki/Filesystem_in_Userspace "FUSE driver"), which operates in user-space and uses the [BaseSpace API](https://developer.basespace.illumina.com "BaseSpace API") to populate the contents of each directory.
 
 ##BaseMount Installation
-[BaseMount](https://basemount.basespace.illumina.com "BaseMount") installation instructions can be found here: [basemount.basespace.illumina.com](http://basemount.basespace.illumina.com/). Installation requires root access. Non-root CentOS users need to be added to 'fuse' user group by the administrator before being able to run [BaseMount](https://basemount.basespace.illumina.com "BaseMount"). To run [BaseMount](https://basemount.basespace.illumina.com "BaseMount") inside a docker container, the container must be run in privileged mode.
+
+Installation requires root access. Non-root CentOS users need to be added to 'fuse' user group by the administrator before being able to run [BaseMount](https://basemount.basespace.illumina.com "BaseMount"). To run [BaseMount](https://basemount.basespace.illumina.com "BaseMount") inside a docker container, the container must be run in privileged mode.
+
+### Quick install:
+Run the following command:
+
+
+    sudo bash -c "$(curl -L https://basemount.basespace.illumina.com/install/)"
+This script work on both Ubuntu and CentOS. The script will add BaseSpace package repositories and import public key to your system and install [BaseMount](https://basemount.basespace.illumina.com "BaseMount") and its prerequisites.
+
+###Manual install:
+####Ubuntu:
+    wget https://bintray.com/artifact/download/basespace/BaseSpaceFS-DEB/bsfs_1.1.631-1_amd64.deb
+    wget https://bintray.com/artifact/download/basespace/BaseMount-DEB/basemount_0.1.2.463-20150714_amd64.deb
+    sudo dpkg -i --force-confmiss bsfs_1.1.631-1_amd64.deb
+    sudo dpkg -i basemount_0.1.2.463-20150714_amd64.deb
+####CentOS
+    wget https://bintray.com/artifact/download/basespace/BaseSpaceFS-RPM/bsfs-1.1.632-1.x86_64.rpm
+    wget https://bintray.com/artifact/download/basespace/BaseMount-RPM/basemount-0.1.2.464-20150714.x86_64.rpm
+    sudo yum install bsfs-1.1.632-1.x86_64.rpm
+    sudo yum install basemount-0.1.2.464-20150714.x86_64.rpm
+
 
 ##Minimum Hardware Requirements and System-Level Settings
 We have tested the BaseMount *Alpha* v0.1.2 release on the following systems:
@@ -27,7 +48,7 @@ Minimum Hardware requirements:
 
 
 - RAM: 4GB 
-- Processors: 4 cores
+- Processor: 4 cores
 - Disk: 5GB /tmp
 
 With the following ulimit thresholds:
@@ -35,6 +56,7 @@ With the following ulimit thresholds:
 
 - Default settings for CentOS (-l 64, -m unlimited, -n 1024, -s 10240, -u 4553)
 - Default settings for Ubuntu (-l 64, -m unlimited, -n 1024, -s 8192, -u 15722)
+
 
 ##Authentication
 The first time you run [BaseMount](https://basemount.basespace.illumina.com "BaseMount"), you will be directed to a web URL and asked to enter your BaseSpace user credentials. BaseMount will use these credentials to authenticate your interactions with BaseSpace. By default, the credentials are cached in your home directory and they can be password-encrypted for security, just like an ssh key.
