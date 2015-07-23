@@ -26,7 +26,7 @@ BaseMount mimics the structure of the major resources represented in the API.  T
 ![API Users/Current](/images/articles/api-users-current.png)
 
 ###Root
-Runs and Projects are the two root directories, which contain sub-directories with the names of the runs/projects that you have access too.
+Runs and Projects are the two root directories, which contain sub-directories with the names of the runs/projects that the user has access to.
 
 ![Root](/images/articles/tree-root.png)
 
