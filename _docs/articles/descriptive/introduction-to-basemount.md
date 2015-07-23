@@ -36,6 +36,19 @@ With the following ulimit thresholds:
 - Default settings for CentOS (-l 64, -m unlimited, -n 1024, -s 10240, -u 4553)
 - Default settings for Ubuntu (-l 64, -m unlimited, -n 1024, -s 8192, -u 15722)
 
+##Mounting Your BaseSpace Account
+After successful installation, you can then mount your [BaseSpace](https://basespace.illumina.com "BaseSpace") account with [BaseMount](https://basemount.basespace.illumina.com "BaseMount"). Basic usage is as follows:
+
+    basemount --config {config_file_prefix} {mount-point folder}
+
+where the --config parameter is optional, and useful when a user has multiple basespace accounts to be mounted. The prefix is used to create a prefix.cfg file in the ~/.basespace/ directory. The mount point directory is going to be the top level folder in your mounted file tree.
+
+Example:
+
+    mkdir ~/BaseSpace_Mount    
+    basemount --config user1 ~/BaseSpace_Mount
+
+
 ##Authentication
 The first time you run [BaseMount](https://basemount.basespace.illumina.com "BaseMount"), you will be directed to a web URL and asked to enter your BaseSpace user credentials. BaseMount will use these credentials to authenticate your interactions with BaseSpace. By default, the credentials are cached in your home directory and they can be password-encrypted for security, just like an ssh key.
 
