@@ -110,6 +110,9 @@ Every new directory access made by BaseMount relies on FUSE, the BaseSpace API a
 - The Runs Files directory is not mounted automatically for you as there can be 100k + files available in that mount which can take a couple minutes to load for really large runs.  You can still mount this directory manually if needed.
 - In general, lots of concurrent requests can cause stability issues on a resource constrained system.  Keep in mind, this is an early release and stability will increase.
 
+## Feedback
+
+Please visit our [BaseSpace google group](https://groups.google.com/forum/#!forum/basespace-developers) for inquiries and to submit feedback. 
 
 ##Tutorial Videos
 
@@ -129,20 +132,20 @@ Every new directory access made by BaseMount relies on FUSE, the BaseSpace API a
 
 {% step 4, , Projects, Runs, Samples %}
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/VPMFKhNRYjU" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/afP7SogrcQs" frameborder="0" allowfullscreen></iframe>
 
 {% endstep %}
 
 
 {% step 5, ,  AppSessions and AppResults %}
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/VPMFKhNRYjU" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FDRQLN5etCM" frameborder="0" allowfullscreen></iframe>
 
 {% endstep %}
 
 {% step 6, ,  Access Large Files %}
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/VPMFKhNRYjU" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zCkRIKW3rZU" frameborder="0" allowfullscreen></iframe>
 
 {% endstep %}
 
