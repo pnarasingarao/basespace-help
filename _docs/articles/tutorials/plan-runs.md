@@ -1,6 +1,6 @@
 ---
 layout: article
-title: How to plan runs
+title: How to plan runs with Prep Tab
 hide_welcome_banner: true
 ---
 
