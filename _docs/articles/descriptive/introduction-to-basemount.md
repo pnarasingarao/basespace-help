@@ -75,7 +75,7 @@ BaseMount can also be used to mount user account data for BaseSpace Onsite, whic
 
     basemount --config {config_file_prefix} --api-server {API Url} {mount-point folder}
 
-where the API Url is in the format of http://{BaseSpace-IP-Address}:8080 for BaseSpace Onsite users.
+where the API Url is in the format of `http://{BaseSpace-IP-Address}:8080` for BaseSpace Onsite users.
 
 ##Authentication
 The first time you run [BaseMount](https://basemount.basespace.illumina.com "BaseMount"), you will be directed to a web URL and asked to enter your BaseSpace user credentials. BaseMount will use these credentials to authenticate your interactions with BaseSpace. By default, the credentials are cached in your home directory and they can be password-encrypted for security, just like an ssh key.
