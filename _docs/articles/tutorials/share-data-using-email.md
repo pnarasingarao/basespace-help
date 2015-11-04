@@ -10,13 +10,13 @@ Sharing using the "Share" option allows you to share a Project or Run with a spe
 **For Projects**,
 
 {% step 1, /images/tutorials/share-project-selector_1366x422.png, Click on Share Project %}
-Select the "Projecs" icon and select the desired Project. Select the "Share" button from the options available in the top menu.
+Select the "Projects" icon and select the desired Project. Select the "Share" button from the options available in the top menu.
 {% endstep %}
 
 **Alternatively**,
 
 {% step 1, /images/tutorials/share-project-selector-alternate_1359x318.png, Click on Share Project %}
-Select the "Projecs" icon and click on the desired Project. Select the "Share" button from the options available in the Projects page.
+Select the "Projects" icon and click on the desired Project. Select the "Share" button from the options available in the Projects page.
 {% endstep %}
 
 **For Runs**,
