@@ -4,7 +4,7 @@ title: The iOS App for BaseSpace
 hide_welcome_banner: true
 ---
 
-The iOS app for BaseSpace makes it easier for you to browse through your Runs and Analyses in BaseSpace.  You can review metrics, charts, and other information about Runs and Analyses.  This article will cover the features available in the current version of the app.  The BaseSpace iOS app is available in the  [iTunes App Store](), try it out for yourself!
+The iOS app for BaseSpace makes it easier for you to browse through your Runs and Analyses in BaseSpace.  You can review metrics, charts, and other information about Runs and Analyses.  This article will cover the features available in the current version of the app.  The BaseSpace iOS app is available in the  [iTunes App Store](https://itunes.apple.com/us/app/keynote/id942794217?mt=8), try it out for yourself!
 
 ##Log in to the iOS App
 
@@ -57,7 +57,9 @@ Select a run in the Runs list to view a detailed page about that Run.
 
 ![Analysis List Icon](/images/mobile-ios/analysis-unselected.png)
 
-Tap the **Analysis** icon to view the Analyses list page. Select any Analysis in the list to view more details about that particular Analysis. This page includes:
+Tap the **Analysis** icon to view the Analyses list page. Select any Analysis in the list to view more details about that particular Analysis. 
+
+This page includes:
 
 * Name of the Analysis - The name of the analysis; by default, the name includes the app name, followed by the date and time the analysis session started.
 * Status - Overall status of the analysis.
