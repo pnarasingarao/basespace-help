@@ -227,11 +227,12 @@ Each new directory access made by BaseMount relies on the local FUSE device (/de
 
 ##ChangeLog
 
-### Mon Jan 18 2016 - v0.11.0 Alpha
+### Mon Jan 18 2016 - v0.11.1 Alpha
 - Proxy support
-- The "Files" directories are not symlinks anymore
-- BSFS plugin
+- "Files" directories are not symlinks anymore
+- Run Files are automatically mounted, now that they load more interactively
 - .basemount directories for BaseSpaceCLI support
+- BSFS available as a plugin
 
 ### Fri Jul 24 2015 - v0.1.0 Alpha
 - Initial release
