@@ -84,8 +84,8 @@ Example:
     mkdir ~/BaseSpace_Mount
     basemount --config user1 ~/BaseSpace_Mount
 
-##Mounting Your BaseSpace Onsite Account
-BaseMount can also be used to mount user account data for BaseSpace Onsite. This is supported starting with BaseSpace Onsite version 2.1.
+##Mounting a BaseSpace Onsite System
+BaseMount can also be used to mount user account data for BaseSpace Onsite. This is supported starting with BaseSpace Onsite 2.1.
 In order to mount your account data, you must use an additional command-line parameter: --api-server. This will direct BaseMount to connect via the API URL of the BaseSpace Onsite system.
 Basic usage for BaseSpace Onsite is as follows:
 
