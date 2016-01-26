@@ -227,14 +227,17 @@ Each new directory access made by BaseMount relies on the local FUSE device (/de
 
 ##ChangeLog
 
-### Mon Jan 18 2016 - v0.11.0 Alpha
+### Mon Jan 26 2016 - v0.11.1 Alpha
 - Proxy support
-- The "Files" directories are not symlinks anymore
-- BSFS plugin
+- "Files" directories are not symlinks anymore
+- Run Files are automatically mounted, now that they load more interactively
 - .basemount directories for BaseSpaceCLI support
+- BSFS available as a plugin
 
 ### Fri Jul 24 2015 - v0.1.0 Alpha
 - Initial release
+
+
 ## Feedback
 
 Please visit our [BaseSpace google group](https://groups.google.com/forum/#!forum/basespace-developers) for inquiries and to submit feedback. 
@@ -260,10 +263,33 @@ Please uninstall all existing versions of BaseMount and BSFS first, and then ins
 	wget https://bintray.com/artifact/download/basespace/BaseSpaceFS-DEB/bsfs_1.1.631-1_amd64.deb
 	sudo dpkg -i basemount_0.1.2.463-20150714_amd64.deb
 	sudo dpkg -i --force-confmiss bsfs_1.1.631-1_amd64.deb
+	sudo apt-get -f install # Install any potentially missing dependency
 
 #####CentOS
 
 	wget https://bintray.com/artifact/download/basespace/BaseMount-RPM/basemount-0.1.2.464-20150714.x86_64.rpm
 	wget https://bintray.com/artifact/download/basespace/BaseSpaceFS-RPM/bsfs-1.1.632-1.x86_64.rpm
-	sudo yum install basemount-0.1.2.464-20150714.x86_64.rpm
-	sudo yum install bsfs-1.1.632-1.x86_64.rpm
+	sudo yum install ./basemount-0.1.2.464-20150714.x86_64.rpm
+	sudo yum install ./bsfs-1.1.632-1.x86_64.rpm
+
+####v0.11 Alpha:
+
+#####Ubuntu:
+
+	wget https://bintray.com/artifact/download/basespace/BaseMount-DEB/basemount_0.11.1.1342-20160126_amd64.debs
+	sudo dpkg -i basemount_0.11.1.1342-20160126_amd64.deb
+	sudo apt-get -f install # Install any potentially missing dependency
+
+	# Optional BSFS plugin
+	wget https://bintray.com/artifact/download/basespace/BaseSpaceFS-DEB/bsfs_1.3.771-1_amd64.deb
+	sudo dpkg -i --force-confmiss bsfs_1.3.771-1_amd64.deb
+	sudo apt-get -f install # Install any potentially missing dependency
+
+#####CentOS
+
+	wget https://bintray.com/artifact/download/basespace/BaseMount-RPM/basemount-0.11.1.1343-20160126.x86_64.rpm
+	sudo yum install ./basemount-0.11.1.1343-20160126.x86_64.rpm
+
+	# Optional BSFS plugin
+	wget https://bintray.com/artifact/download/basespace/BaseSpaceFS-RPM/bsfs-1.3.772-1.x86_64.rpm
+	sudo yum install ./bsfs-1.3.772-1.x86_64.rpm
