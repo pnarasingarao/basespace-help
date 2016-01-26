@@ -269,8 +269,8 @@ Please uninstall all existing versions of BaseMount and BSFS first, and then ins
 
 	wget https://bintray.com/artifact/download/basespace/BaseMount-RPM/basemount-0.1.2.464-20150714.x86_64.rpm
 	wget https://bintray.com/artifact/download/basespace/BaseSpaceFS-RPM/bsfs-1.1.632-1.x86_64.rpm
-	sudo yum install basemount-0.1.2.464-20150714.x86_64.rpm
-	sudo yum install bsfs-1.1.632-1.x86_64.rpm
+	sudo yum install ./basemount-0.1.2.464-20150714.x86_64.rpm
+	sudo yum install ./bsfs-1.1.632-1.x86_64.rpm
 
 ####v0.11 Alpha:
 
@@ -288,8 +288,8 @@ Please uninstall all existing versions of BaseMount and BSFS first, and then ins
 #####CentOS
 
 	wget https://bintray.com/artifact/download/basespace/BaseMount-RPM/basemount-0.11.1.1343-20160126.x86_64.rpm
-	sudo yum install basemount-0.11.1.1343-20160126.x86_64.rpm
+	sudo yum install ./basemount-0.11.1.1343-20160126.x86_64.rpm
 
 	# Optional BSFS plugin
 	wget https://bintray.com/artifact/download/basespace/BaseSpaceFS-RPM/bsfs-1.3.772-1.x86_64.rpm
-	sudo yum install bsfs-1.3.772-1.x86_64.rpm
+	sudo yum install ./bsfs-1.3.772-1.x86_64.rpm
