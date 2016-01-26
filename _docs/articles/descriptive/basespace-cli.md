@@ -27,16 +27,16 @@ Run the following command:
 
 ####Ubuntu:
 
-    wget https://bintray.com/artifact/download/basespace/BaseSpaceCLI-DEB/pool/main/s/stable/basespace-cli_0.6-290_amd64.deb
+    wget https://bintray.com/artifact/download/basespace/BaseSpaceCLI-DEB/pool/main/s/stable/basespace-cli_0.6-295_amd64.deb
     # need to run this twice - once to get dependencies for apt-get to install and then again to install it
-    dpkg -i basespace-cli_0.6-290_amd64.deb
+    dpkg -i basespace-cli_0.6-295_amd64.deb
     apt-get -fy install 
-    dpkg -i basespace-cli_0.6-290_amd64.deb
+    dpkg -i basespace-cli_0.6-295_amd64.deb
 
 ####CentOS:
 
-    wget https://bintray.com/artifact/download/basespace/BaseSpaceCLI-RPM/basespace-cli-0.6-290.x86_64.rpm
-    yum install -y basespace-cli-0.6-290.x86_64.rpm
+    wget https://bintray.com/artifact/download/basespace/BaseSpaceCLI-RPM/basespace-cli-0.6-295.x86_64.rpm
+    yum install -y basespace-cli-0.6-295.x86_64.rpm
 
 
 ##Demonstration Videos
@@ -170,7 +170,7 @@ The `bs launch app` command is a tool to launch BaseSpace apps from the command 
 ###Basic Usage
 Apps can only be launched if the app has been "imported", which means setting up a specification how the app should be launched. Specifications for the BWA, Isaac, TopHat and Cufflinks apps comes as standard:
 
-    $ bs list apps --app-launch-details
+    $ bs list apps
     +---------+----------------------------------+------------+---------------------------------------------+-------------------------------------------------------------------------------------+
     | appid   | appname                          | appversion | source                                      | parameters                                                                          |
     +---------+----------------------------------+------------+---------------------------------------------+-------------------------------------------------------------------------------------+
@@ -417,8 +417,6 @@ These options are also available from the BaseSpaceCLI with the --show-validatio
 
 ###Upload Options
 The only mandatory configuration switch for sample upload is the BaseSpace project which should be used as the destination (-p). This can be the project ID, the project name or a BaseMount path. The upload tool will check whether the specified token has access to a project with the specified name and issue an error if there are problems.
-
-There are also options to change the metadata that is attached to the sample that is uploaded, including the sample_id (-i) (otherwise derived from the filename) sample name (-n) (otherwise matching the sample_id), and the description or experiment (-e) (defaults to information about system and user). 
 
 ###Bulk Upload
 One advantage of uploading fastq files using the command line tool is that it is possible to script the bulk upload of many samples. This section provides some examples of using the standard features of the Unix shell to upload large numbers of samples with a handful of commands.
