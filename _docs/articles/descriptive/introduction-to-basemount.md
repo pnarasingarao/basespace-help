@@ -276,7 +276,7 @@ Please uninstall all existing versions of BaseMount and BSFS first, and then ins
 
 #####Ubuntu:
 
-	wget https://bintray.com/artifact/download/basespace/BaseMount-DEB/basemount_0.11.1.1342-20160126_amd64.debs
+	wget https://bintray.com/artifact/download/basespace/BaseMount-DEB/basemount_0.11.1.1342-20160126_amd64.deb
 	sudo dpkg -i basemount_0.11.1.1342-20160126_amd64.deb
 	sudo apt-get -f install # Install any potentially missing dependency
 
