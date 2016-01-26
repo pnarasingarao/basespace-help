@@ -236,6 +236,8 @@ Each new directory access made by BaseMount relies on the local FUSE device (/de
 
 ### Fri Jul 24 2015 - v0.1.0 Alpha
 - Initial release
+
+
 ## Feedback
 
 Please visit our [BaseSpace google group](https://groups.google.com/forum/#!forum/basespace-developers) for inquiries and to submit feedback. 
