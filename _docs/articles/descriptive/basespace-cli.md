@@ -18,13 +18,29 @@ Supported Operating Systems:
 
 ##Installation
 
-BaseSpaceCLI is available as an rpm and a deb. Download and install with yum or dpkg as appropriate.
+###Quick Installation
+Run the following command:
 
-- CentOS >= 6.5: http://basespace-builds.illumina.com/repository/download/BaseSpaceCli_BuildUbuntu1404deb/48546:id/basespace-cli-0.4-246.x86_64.rpm
-- Ubuntu >= 14: http://basespace-builds.illumina.com/repository/download/BaseSpaceCli_BuildUbuntu1404deb/48546:id/basespace-cli_0.4-246_amd64.deb
+    $ sudo bash -c "$(curl -L https://bintray.com/artifact/download/basespace/helper/install.sh)"
+
+###Manual Installation
+
+####Ubuntu:
+
+    wget https://bintray.com/artifact/download/basespace/BaseSpaceCLI-DEB/pool/main/s/stable/basespace-cli_0.6-290_amd64.deb
+    # need to run this twice - once to get dependencies for apt-get to install and then again to install it
+    dpkg -i basespace-cli_0.6-290_amd64.deb
+    apt-get -fy install 
+    dpkg -i basespace-cli_0.6-290_amd64.deb
+
+####CentOS:
+
+    wget https://bintray.com/artifact/download/basespace/BaseSpaceCLI-RPM/basespace-cli-0.6-290.x86_64.rpm
+    yum install -y basespace-cli-0.6-290.x86_64.rpm
+
 
 ##Demonstration Videos
-As well as the this documentation, there are also [videos](link needed!) of core BaseSpaceCLI functionality.
+As well as this documentation, there are also [video demos](https://www.youtube.com/playlist?list=PLLCJ4-FhlRM6gc19h6GZCRXkNNqYe2N8_) of BaseSpaceCLI functionality.
 
 ##Authentication
 Before the CLI tools can be used, an authentication token must be obtained from BaseSpace. This token will be used each time the CLI tools contact the BaseSpace API. If you have already used BaseMount, a token will already be present that can also be used by BaseSpaceCLI and you can skip this step.
