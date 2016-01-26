@@ -227,7 +227,7 @@ Each new directory access made by BaseMount relies on the local FUSE device (/de
 
 ##ChangeLog
 
-### Mon Jan 18 2016 - v0.11.1 Alpha
+### Mon Jan 26 2016 - v0.11.1 Alpha
 - Proxy support
 - "Files" directories are not symlinks anymore
 - Run Files are automatically mounted, now that they load more interactively
