@@ -180,7 +180,7 @@ Apps can only be launched if the app has been "imported", which means setting up
     | 408408  | Cufflinks Assembly & DE          | 1.1.0      | preset                                      | comparison-samples (appresult[]) control-samples (appresult[]) project-id (project) |
     +---------+----------------------------------+------------+---------------------------------------------+-------------------------------------------------------------------------------------+
 
-If you run the same command with the --app-launch-details option, all the apps in BaseSpace are listed including a column for whether they are currently launchable with the CLI.
+If you run the same command with the --all-apps option, all the apps in BaseSpace are listed including a column for whether they are currently launchable with the CLI.
 
 The parameters entry shows what you need to pass on the command line to launch the app. Each argument is listed in order, with the name (eg. project-id) and then the type in brackets. If a type has a [] suffix, this means multiple arguments can be supplied either via comma separation or by providing a file (prefixed with an @ sign in the same way as curl) with one entry per line. Further example are provided in the [bulk launches](#bulklaunches) section.
 
