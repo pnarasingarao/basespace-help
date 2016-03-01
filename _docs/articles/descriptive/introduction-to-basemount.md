@@ -29,15 +29,15 @@ The script of each video is included here for quick reference.
 
 {% step 1, , Install %} <iframe width="560" height="315" src="https://www.youtube.com/embed/jmsdDmHV-aQ" frameborder="0" allowfullscreen></iframe> {% endstep %}
 
-```
-sudo bash -c "$(curl -L https://basemount.basespace.illumina.com/install)"
 
-# As your intended user: check that fusermount is executable
-fusermount --version
+    sudo bash -c "$(curl -L https://basemount.basespace.illumina.com/install)"
 
-# Optional: Refresh bash auto-completion
-exec bash
-```
+    # As your intended user: check that fusermount is executable
+    fusermount --version
+
+    # Optional: Refresh bash auto-completion
+    exec bash
+
 
 
 {% step 2, , Import Data to Account %} <iframe width="560" height="315" src="https://www.youtube.com/embed/R8ou0yLE_Ts" frameborder="0" allowfullscreen></iframe> {% endstep %}
