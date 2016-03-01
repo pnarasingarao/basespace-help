@@ -50,6 +50,7 @@ The script of each video is included here for quick reference.
       - Run 1  : https://basespace.illumina.com/s/0FCHjcXGsMMX
       - Run 2  : https://basespace.illumina.com/s/EXDT8tjo6Zbc
       - Project: https://basespace.illumina.com/s/mYwAqCV3Pe7R
+
 {% endstep %}
 
 
@@ -65,6 +66,7 @@ The script of each video is included here for quick reference.
 
    # See the top level of your newly mounted environment!
    ls BaseSpace
+
 {% endstep %}
 
 {% step 4, , Projects, Runs, Samples %} <iframe width="560" height="315" src="https://www.youtube.com/embed/afP7SogrcQs" frameborder="0" allowfullscreen></iframe>
@@ -86,6 +88,7 @@ The script of each video is included here for quick reference.
 
    # Extract first 2 lines of compressed fastq without having to download whole file
    zcat Files/NA12878-L1-S1_S1_L001_R1_001.fastq.gz | head -2
+
 {% endstep %}
 
 {% step 5, ,  AppSessions and AppResults %} <iframe width="560" height="315" src="https://www.youtube.com/embed/FDRQLN5etCM" frameborder="0" allowfullscreen></iframe> 
@@ -105,6 +108,7 @@ The script of each video is included here for quick reference.
    cd Files
    ls
    ls -lh
+
 {% endstep %}
 
 {% step 6, ,  Access Large Files %} <iframe width="560" height="315" src="https://www.youtube.com/embed/zCkRIKW3rZU" frameborder="0" allowfullscreen></iframe> 
@@ -127,6 +131,7 @@ The script of each video is included here for quick reference.
    <open NA12878-L1-S1_S1.bam in IGV>
    <enter chr3:456789 in IGV>
    <admire the view>
+
 {% endstep %}
 
 {% step 7, ,  Metadata %} <iframe width="560" height="315" src="https://www.youtube.com/embed/xknDqArvRf8" frameborder="0" allowfullscreen></iframe> 
@@ -180,6 +185,7 @@ Here is a quick step-by-step guide on how easy it is to upload a file to a new A
    basemount-cmd mark-as-complete
    # (You can now navigate to your BaseSpace account in a browser
    #  and check that the file is present in the myNewProject project)
+
 {% endstep %}
 
 
