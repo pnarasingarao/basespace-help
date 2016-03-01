@@ -40,8 +40,8 @@ Run the following command:
 
 ####MacOS (Yosemite and El Capitan)
 
-    wget FIXME!
-    tar xvfz FIXME!
+    wget https://basespace.bintray.com/BaseSpaceCLI-TGZ/basespace-cli-latest.src.tgz
+    tar xvfz basespace-cli-latest.src.tgz
     cd basespace-cli
     sudo make install
     
