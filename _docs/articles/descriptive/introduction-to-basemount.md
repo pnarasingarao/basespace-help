@@ -27,8 +27,7 @@ This video series starts by preparing you for your first mount and ends with fil
 The script of each video is included here for quick reference.
 
 
-{% step 1, , Install %} <iframe width="560" height="315" src="https://www.youtube.com/embed/jmsdDmHV-aQ" frameborder="0" allowfullscreen></iframe> {% endstep %}
-
+{% step 1, , Install %} <iframe width="560" height="315" src="https://www.youtube.com/embed/jmsdDmHV-aQ" frameborder="0" allowfullscreen></iframe> 
 
     sudo bash -c "$(curl -L https://basemount.basespace.illumina.com/install)"
 
@@ -37,11 +36,11 @@ The script of each video is included here for quick reference.
 
     # Optional: Refresh bash auto-completion
     exec bash
+    
+{% endstep %}
 
 
-
-{% step 2, , Import Data to Account %} <iframe width="560" height="315" src="https://www.youtube.com/embed/R8ou0yLE_Ts" frameborder="0" allowfullscreen></iframe> {% endstep %}
-
+{% step 2, , Import Data to Account %} <iframe width="560" height="315" src="https://www.youtube.com/embed/R8ou0yLE_Ts" frameborder="0" allowfullscreen></iframe> 
 ```
 In a browser, starting from basespace.illumina.com
  - Log in
@@ -52,6 +51,7 @@ In a browser, starting from basespace.illumina.com
    - Run 2  : https://basespace.illumina.com/s/EXDT8tjo6Zbc
    - Project: https://basespace.illumina.com/s/mYwAqCV3Pe7R
 ```
+{% endstep %}
 
 
 {% step 3, , First Time Launch %} <iframe width="560" height="315" src="https://www.youtube.com/embed/VPMFKhNRYjU" frameborder="0" allowfullscreen></iframe> {% endstep %}
