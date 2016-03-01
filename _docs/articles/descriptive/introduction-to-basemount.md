@@ -160,8 +160,7 @@ The script of each video is included here for quick reference.
 
 {% endstep %}
 
-{% step 8, ,  Metadata %}
-File upload (video coming soon)
+{% step 8, ,  File upload (video coming soon)  %}
 
 Here is a quick step-by-step guide on how easy it is to upload a file to a new AppResult:
 
