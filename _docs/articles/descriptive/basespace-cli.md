@@ -38,6 +38,16 @@ Run the following command:
     wget https://bintray.com/artifact/download/basespace/BaseSpaceCLI-RPM/basespace-cli-0.6-295.x86_64.rpm
     yum install -y basespace-cli-0.6-295.x86_64.rpm
 
+####MacOS (Yosemite and El Capitan)
+
+    wget https://basespace.bintray.com/BaseSpaceCLI-TGZ/basespace-cli-latest.src.tgz
+    tar xvfz basespace-cli-latest.src.tgz
+    cd basespace-cli
+    sudo make install
+    
+####Other Unix platforms
+
+The tarball used for the Mac installation should work on any Unix platform that supports Python, but this is unsupported so use at your own risk. 
 
 ##Demonstration Videos
 As well as this documentation, there are also [video demos](https://www.youtube.com/playlist?list=PLLCJ4-FhlRM6gc19h6GZCRXkNNqYe2N8_) of BaseSpaceCLI functionality.
