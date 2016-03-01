@@ -42,7 +42,7 @@ The script of each video is included here for quick reference.
 
 {% step 2, , Import Data to Account %} <iframe width="560" height="315" src="https://www.youtube.com/embed/R8ou0yLE_Ts" frameborder="0" allowfullscreen></iframe>
 
-   In a browser, starting from basespace.illumina.com
+    In a browser, starting from basespace.illumina.com
     - Log in
     - Add public dataset (2 runs + 1 project):
       "HiSeq X Ten TruSeq PCR Free (16 NA12878 1 plex)"
@@ -56,107 +56,107 @@ The script of each video is included here for quick reference.
 
 {% step 3, , First Time Launch %} <iframe width="560" height="315" src="https://www.youtube.com/embed/VPMFKhNRYjU" frameborder="0" allowfullscreen></iframe>
 
-   # Mount your BaseSpace account
-   mkdir BaseSpace
-   basemount BaseSpace/
-   <copy authentication URL to browser>
-   <login in browser>
-   <accept authentication>
-   <back in terminal: enter [empty] passphrase [not] to encrypt access token>
-
-   # See the top level of your newly mounted environment!
-   ls BaseSpace
+    # Mount your BaseSpace account
+    mkdir BaseSpace
+    basemount BaseSpace/
+    <copy authentication URL to browser>
+    <login in browser>
+    <accept authentication>
+    <back in terminal: enter [empty] passphrase [not] to encrypt access token>
+    
+    # See the top level of your newly mounted environment!
+    ls BaseSpace
 
 {% endstep %}
 
 {% step 4, , Projects, Runs, Samples %} <iframe width="560" height="315" src="https://www.youtube.com/embed/afP7SogrcQs" frameborder="0" allowfullscreen></iframe>
 
-   # Mount your BaseSpace account
-   mkdir BaseSpace
-   basemount BaseSpace/
+    # Mount your BaseSpace account
+    mkdir BaseSpace
+    basemount BaseSpace/
 
-   # List your projects and runs
-   cd BaseSpace
-   ls Projects
-   ls -lh Runs
+    # List your projects and runs
+    cd BaseSpace
+    ls Projects
+    ls -lh Runs
 
-   # List files from one particular sample
-   cd "Projects/HiSeq X Ten: TruSeq PCR-Free (16 replicates of NA12878)"
-   cd Samples
-   cd NA12878_L1_S1
-   ls Files/
+    # List files from one particular sample
+    cd "Projects/HiSeq X Ten: TruSeq PCR-Free (16 replicates of NA12878)"
+    cd Samples
+    cd NA12878_L1_S1
+    ls Files/
 
-   # Extract first 2 lines of compressed fastq without having to download whole file
-   zcat Files/NA12878-L1-S1_S1_L001_R1_001.fastq.gz | head -2
+    # Extract first 2 lines of compressed fastq without having to download whole file
+    zcat Files/NA12878-L1-S1_S1_L001_R1_001.fastq.gz | head -2
 
 {% endstep %}
 
 {% step 5, ,  AppSessions and AppResults %} <iframe width="560" height="315" src="https://www.youtube.com/embed/FDRQLN5etCM" frameborder="0" allowfullscreen></iframe> 
 
-   # Mount your BaseSpace account
-   mkdir BaseSpace
-   basemount BaseSpace/
-   
-   # List appsessions and appresults
-   cd "BaseSpace/Projects/HiSeq X Ten: TruSeq PCR-Free (16 replicates of NA12878)"
-   ls AppSessions
-   ls AppResults
-   
-   # List files from one particular appresult
-   cd "AppSessions/BWA Whole Genome Sequencing v1.0 - NA12878_L1_S1"
-   cd AppResults.20208193.NA12878_L1_S1
-   cd Files
-   ls
-   ls -lh
+    # Mount your BaseSpace account
+    mkdir BaseSpace
+    basemount BaseSpace/
+    
+    # List appsessions and appresults
+    cd "BaseSpace/Projects/HiSeq X Ten: TruSeq PCR-Free (16 replicates of NA12878)"
+    ls AppSessions
+    ls AppResults
+    
+    # List files from one particular appresult
+    cd "AppSessions/BWA Whole Genome Sequencing v1.0 - NA12878_L1_S1"
+    cd AppResults.20208193.NA12878_L1_S1
+    cd Files
+    ls
+    ls -lh
 
 {% endstep %}
 
 {% step 6, ,  Access Large Files %} <iframe width="560" height="315" src="https://www.youtube.com/embed/zCkRIKW3rZU" frameborder="0" allowfullscreen></iframe> 
 
-   # Mount your BaseSpace account
-   mkdir BaseSpace
-   basemount BaseSpace/
+    # Mount your BaseSpace account
+    mkdir BaseSpace
+    basemount BaseSpace/
    
-   # Go to the Files directory of a sample
-   cd "BaseSpace/Projects/HiSeq X Ten: TruSeq PCR-Free (16 replicates of NA12878)"
-   cd AppResults/NA12878_L1_S1/Files
-   ls -lh
+    # Go to the Files directory of a sample
+    cd "BaseSpace/Projects/HiSeq X Ten: TruSeq PCR-Free (16 replicates of NA12878)"
+    cd AppResults/NA12878_L1_S1/Files
+    ls -lh
    
-   # Run interactive samtools queries without having to download the full file
-   samtools view -H NA12878-L1-S1_S1.bam
-   samtools view NA12878-L1-S1_S1.bam chr3:456789-456789 | head -2
-   samtools view NA12878-L1-S1_S1.bam chr3:456789-456789 | wc -l
+    # Run interactive samtools queries without having to download the full file
+    samtools view -H NA12878-L1-S1_S1.bam
+    samtools view NA12878-L1-S1_S1.bam chr3:456789-456789 | head -2
+    samtools view NA12878-L1-S1_S1.bam chr3:456789-456789 | wc -l
    
-   # Use IGV without having to download the full BAM file
-   <open NA12878-L1-S1_S1.bam in IGV>
-   <enter chr3:456789 in IGV>
-   <admire the view>
+    # Use IGV without having to download the full BAM file
+    <open NA12878-L1-S1_S1.bam in IGV>
+    <enter chr3:456789 in IGV>
+    <admire the view>
 
 {% endstep %}
 
 {% step 7, ,  Metadata %} <iframe width="560" height="315" src="https://www.youtube.com/embed/xknDqArvRf8" frameborder="0" allowfullscreen></iframe> 
 
-   # Mount your BaseSpace account
-   mkdir BaseSpace
-   basemount BaseSpace/
+    # Mount your BaseSpace account
+    mkdir BaseSpace
+    basemount BaseSpace/
    
-   # Enter a run and look at its metadata
-   cd BaseSpace
-   cd "Runs/HiSeq X Ten TruSeq PCR Free (16 NA12878 1 plex) FC_A"
-   ls -al
-   cat .type
-   cat .id
-   cat .json
+    # Enter a run and look at its metadata
+    cd BaseSpace
+    cd "Runs/HiSeq X Ten TruSeq PCR Free (16 NA12878 1 plex) FC_A"
+    ls -al
+    cat .type
+    cat .id
+    cat .json
+     
+    # Extract specific metadata fields (you may need `apt-get/yum install jq`)
+    cat .json | jq .Response.SequencingStats
+    cd ..
    
-   # Extract specific metadata fields (you may need `apt-get/yum install jq`)
-   cat .json | jq .Response.SequencingStats
-   cd ..
-   
-   # Get list of runs with yields above a specific threshold
-   cat .json | jq '.Response.Items[] | select( .SequencingStats.YieldTotal > 100 )
-       | { Name: .ExperimentName, Yield: .SequencingStats.YieldTotal }'
-   cat .json | jq -r '.Response.Items[] | select(.SequencingStats.YieldTotal>100)
-       | "\(.ExperimentName)\t\(.SequencingStats.YieldTotal)"'
+    # Get list of runs with yields above a specific threshold
+    cat .json | jq '.Response.Items[] | select( .SequencingStats.YieldTotal > 100 )
+        | { Name: .ExperimentName, Yield: .SequencingStats.YieldTotal }'
+    cat .json | jq -r '.Response.Items[] | select(.SequencingStats.YieldTotal>100)
+        | "\(.ExperimentName)\t\(.SequencingStats.YieldTotal)"'
 
 {% endstep %}
 
@@ -165,26 +165,26 @@ File upload (video coming soon)
 
 Here is a quick step-by-step guide on how easy it is to upload a file to a new AppResult:
 
-   # Mount your BaseSpace account
-   mkdir BaseSpace
-   basemount BaseSpace
+    # Mount your BaseSpace account
+    mkdir BaseSpace
+    basemount BaseSpace
 
-   # Create new project
-   cd BaseSpace/Projects
-   mkdir myNewProject
+    # Create new project
+    cd BaseSpace/Projects
+    mkdir myNewProject
 
-   # Create new AppResult (the only entity able to store files other than fastq)
-   cd myNewProject/AppResults
-   mkdir myNewAppResult
-   cd myNewAppResult
+    # Create new AppResult (the only entity able to store files other than fastq)
+    cd myNewProject/AppResults
+    mkdir myNewAppResult
+    cd myNewAppResult
 
-   # Create a file there (or copy one with `cp`)
-   echo "Hello BaseSpace" > Files/hello.txt
+    # Create a file there (or copy one with `cp`)
+    echo "Hello BaseSpace" > Files/hello.txt
 
-   # Mark the container as "Complete"
-   basemount-cmd mark-as-complete
-   # (You can now navigate to your BaseSpace account in a browser
-   #  and check that the file is present in the myNewProject project)
+    # Mark the container as "Complete"
+    basemount-cmd mark-as-complete
+    # (You can now navigate to your BaseSpace account in a browser
+    #  and check that the file is present in the myNewProject project)
 
 {% endstep %}
 
