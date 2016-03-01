@@ -40,7 +40,8 @@ The script of each video is included here for quick reference.
 {% endstep %}
 
 
-{% step 2, , Import Data to Account %} <iframe width="560" height="315" src="https://www.youtube.com/embed/R8ou0yLE_Ts" frameborder="0" allowfullscreen></iframe> 
+{% step 2, , Import Data to Account %} <iframe width="560" height="315" src="https://www.youtube.com/embed/R8ou0yLE_Ts" frameborder="0" allowfullscreen></iframe>
+
    In a browser, starting from basespace.illumina.com
     - Log in
     - Add public dataset (2 runs + 1 project):
@@ -53,6 +54,7 @@ The script of each video is included here for quick reference.
 
 
 {% step 3, , First Time Launch %} <iframe width="560" height="315" src="https://www.youtube.com/embed/VPMFKhNRYjU" frameborder="0" allowfullscreen></iframe>
+
    # Mount your BaseSpace account
    mkdir BaseSpace
    basemount BaseSpace/
@@ -66,6 +68,7 @@ The script of each video is included here for quick reference.
 {% endstep %}
 
 {% step 4, , Projects, Runs, Samples %} <iframe width="560" height="315" src="https://www.youtube.com/embed/afP7SogrcQs" frameborder="0" allowfullscreen></iframe>
+
    # Mount your BaseSpace account
    mkdir BaseSpace
    basemount BaseSpace/
@@ -86,6 +89,7 @@ The script of each video is included here for quick reference.
 {% endstep %}
 
 {% step 5, ,  AppSessions and AppResults %} <iframe width="560" height="315" src="https://www.youtube.com/embed/FDRQLN5etCM" frameborder="0" allowfullscreen></iframe> 
+
    # Mount your BaseSpace account
    mkdir BaseSpace
    basemount BaseSpace/
@@ -104,6 +108,7 @@ The script of each video is included here for quick reference.
 {% endstep %}
 
 {% step 6, ,  Access Large Files %} <iframe width="560" height="315" src="https://www.youtube.com/embed/zCkRIKW3rZU" frameborder="0" allowfullscreen></iframe> 
+
    # Mount your BaseSpace account
    mkdir BaseSpace
    basemount BaseSpace/
@@ -125,6 +130,7 @@ The script of each video is included here for quick reference.
 {% endstep %}
 
 {% step 7, ,  Metadata %} <iframe width="560" height="315" src="https://www.youtube.com/embed/xknDqArvRf8" frameborder="0" allowfullscreen></iframe> 
+
    # Mount your BaseSpace account
    mkdir BaseSpace
    basemount BaseSpace/
