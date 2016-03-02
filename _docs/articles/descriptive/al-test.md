@@ -27,9 +27,7 @@ This video series starts by preparing you for your first mount and ends with fil
 The script of each video is included here for quick reference.
 
 
-{% step 1, 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/jmsdDmHV-aQ" frameborder="0" allowfullscreen></iframe> 
-, Install %} 
+{% step 1, , Install %} <iframe width="560" height="315" src="https://www.youtube.com/embed/jmsdDmHV-aQ" frameborder="0" allowfullscreen></iframe> 
 
     sudo bash -c "$(curl -L https://basemount.basespace.illumina.com/install)"
 
