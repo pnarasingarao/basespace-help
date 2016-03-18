@@ -6,6 +6,26 @@ title: Introduction To BaseMount
 
 
 
+## Table of Contents
+
+ - [Overview](#Overview)
+ - [Tutorial Videos](#TutorialVideos)
+ - [Installation](#Installation)
+ - [Using BaseMount](#Mounting)
+    - [Mounting, Authentication, Unmounting](#Mounting)
+    - [Directory Structure](#DirectoryStructure)
+    - [Downloading Data](#DownloadingData)
+    - [Writing and Uploading data](#WriteMode)
+    - [The basemount-cmd tool](#BasemountCmd)
+ - [Appendix 1: BSFS plugin](#AppendixBsfsPlugin)
+ - [Troubleshooting](#Troubleshooting)
+ - [FAQ](#FAQ)
+ - [ChangeLog](#ChangeLog)
+
+
+
+<a name="Overview"></a>
+
 ## Overview
 
 The main mechanism to interact with your BaseSpace data is via the website at [basespace.illumina.com](https://basespace.illumina.com). However, for some use-cases, it can be useful to work with the same data using the Linux command line interface (CLI). This allows direct ad-hoc programmatic access so that users can write ad-hoc scripts and use tools like find, xargs and command line loops to work with their data in bulk.
@@ -14,11 +34,15 @@ This is the concept behind our BaseSpace command line tool, [BaseMount](https://
 
 
 
+<a name="WhatIsBaseMount"></a>
+
 ## What is BaseMount?
 
 [BaseMount](https://basemount.basespace.illumina.com "BaseMount") is a tool to mount your BaseSpace data as a Linux file system. You can navigate through projects, samples, runs and app results and interact directly with the associated files exactly as you would with any other local file system. BaseMount is based on [FUSE](https://en.wikipedia.org/wiki/Filesystem_in_Userspace "FUSE userspace driver") and uses the [BaseSpace API](https://developer.basespace.illumina.com "BaseSpace API") to populate the contents of each directory.
 
 
+
+<a name="TutorialVideos"></a>
 
 ## Tutorial Videos
 
@@ -27,34 +51,32 @@ This video series starts by preparing you for your first mount and ends with fil
 The script of each video is included here for quick reference.
 
 
-{% step 1, , Install %} <iframe width="560" height="315" src="https://www.youtube.com/embed/jmsdDmHV-aQ" frameborder="0" allowfullscreen></iframe> 
+{% step 1, null, Install %} <iframe width="560" height="315" src="https://www.youtube.com/embed/jmsdDmHV-aQ" frameborder="0" allowfullscreen></iframe>
 
     sudo bash -c "$(curl -L https://basemount.basespace.illumina.com/install)"
-
+    
     # As your intended user: check that fusermount is executable
     fusermount --version
-
+    
     # Optional: Refresh bash auto-completion
     exec bash
-    
+
 {% endstep %}
 
-
-{% step 2, , Import Data to Account %} <iframe width="560" height="315" src="https://www.youtube.com/embed/R8ou0yLE_Ts" frameborder="0" allowfullscreen></iframe>
+{% step 2, null, Import Data to Account %} <iframe width="560" height="315" src="https://www.youtube.com/embed/R8ou0yLE_Ts" frameborder="0" allowfullscreen></iframe>
 
     In a browser, starting from basespace.illumina.com
-    - Log in
-    - Add public dataset (2 runs + 1 project):
-      "HiSeq X Ten TruSeq PCR Free (16 NA12878 1 plex)"
-      (Use the following import links to avoid going through the web GUI)
-      - Run 1  : https://basespace.illumina.com/s/0FCHjcXGsMMX
-      - Run 2  : https://basespace.illumina.com/s/EXDT8tjo6Zbc
-      - Project: https://basespace.illumina.com/s/mYwAqCV3Pe7R
+     - Log in
+     - Add public dataset (2 runs + 1 project):
+       "HiSeq X Ten TruSeq PCR Free (16 NA12878 1 plex)"
+       (Use the following import links to avoid going through the web GUI)
+       - Run 1  : https://basespace.illumina.com/s/0FCHjcXGsMMX
+       - Run 2  : https://basespace.illumina.com/s/EXDT8tjo6Zbc
+       - Project: https://basespace.illumina.com/s/mYwAqCV3Pe7R
 
 {% endstep %}
 
-
-{% step 3, , First Time Launch %} <iframe width="560" height="315" src="https://www.youtube.com/embed/VPMFKhNRYjU" frameborder="0" allowfullscreen></iframe>
+{% step 3, null, First Time Launch %} <iframe width="560" height="315" src="https://www.youtube.com/embed/VPMFKhNRYjU" frameborder="0" allowfullscreen></iframe>
 
     # Mount your BaseSpace account
     mkdir BaseSpace
@@ -69,29 +91,29 @@ The script of each video is included here for quick reference.
 
 {% endstep %}
 
-{% step 4, , Projects, Runs, Samples %} <iframe width="560" height="315" src="https://www.youtube.com/embed/afP7SogrcQs" frameborder="0" allowfullscreen></iframe>
+{% step 4, null, Projects, Runs, Samples %} <iframe width="560" height="315" src="https://www.youtube.com/embed/afP7SogrcQs" frameborder="0" allowfullscreen></iframe>
 
     # Mount your BaseSpace account
     mkdir BaseSpace
     basemount BaseSpace/
-
+    
     # List your projects and runs
     cd BaseSpace
     ls Projects
     ls -lh Runs
-
+    
     # List files from one particular sample
     cd "Projects/HiSeq X Ten: TruSeq PCR-Free (16 replicates of NA12878)"
     cd Samples
     cd NA12878_L1_S1
     ls Files/
-
+    
     # Extract first 2 lines of compressed fastq without having to download whole file
     zcat Files/NA12878-L1-S1_S1_L001_R1_001.fastq.gz | head -2
 
 {% endstep %}
 
-{% step 5, ,  AppSessions and AppResults %} <iframe width="560" height="315" src="https://www.youtube.com/embed/FDRQLN5etCM" frameborder="0" allowfullscreen></iframe> 
+{% step 5, null, AppSessions and AppResults %} <iframe width="560" height="315" src="https://www.youtube.com/embed/FDRQLN5etCM" frameborder="0" allowfullscreen></iframe>
 
     # Mount your BaseSpace account
     mkdir BaseSpace
@@ -111,22 +133,22 @@ The script of each video is included here for quick reference.
 
 {% endstep %}
 
-{% step 6, ,  Access Large Files %} <iframe width="560" height="315" src="https://www.youtube.com/embed/zCkRIKW3rZU" frameborder="0" allowfullscreen></iframe> 
+{% step 6, null, Access Large Files %} <iframe width="560" height="315" src="https://www.youtube.com/embed/zCkRIKW3rZU" frameborder="0" allowfullscreen></iframe>
 
     # Mount your BaseSpace account
     mkdir BaseSpace
     basemount BaseSpace/
-   
+    
     # Go to the Files directory of a sample
     cd "BaseSpace/Projects/HiSeq X Ten: TruSeq PCR-Free (16 replicates of NA12878)"
     cd AppResults/NA12878_L1_S1/Files
     ls -lh
-   
+    
     # Run interactive samtools queries without having to download the full file
     samtools view -H NA12878-L1-S1_S1.bam
     samtools view NA12878-L1-S1_S1.bam chr3:456789-456789 | head -2
     samtools view NA12878-L1-S1_S1.bam chr3:456789-456789 | wc -l
-   
+    
     # Use IGV without having to download the full BAM file
     <open NA12878-L1-S1_S1.bam in IGV>
     <enter chr3:456789 in IGV>
@@ -134,12 +156,12 @@ The script of each video is included here for quick reference.
 
 {% endstep %}
 
-{% step 7, ,  Metadata %} <iframe width="560" height="315" src="https://www.youtube.com/embed/xknDqArvRf8" frameborder="0" allowfullscreen></iframe> 
+{% step 7, null, Metadata %} <iframe width="560" height="315" src="https://www.youtube.com/embed/xknDqArvRf8" frameborder="0" allowfullscreen></iframe>
 
     # Mount your BaseSpace account
     mkdir BaseSpace
     basemount BaseSpace/
-   
+    
     # Enter a run and look at its metadata
     cd BaseSpace
     cd "Runs/HiSeq X Ten TruSeq PCR Free (16 NA12878 1 plex) FC_A"
@@ -147,11 +169,11 @@ The script of each video is included here for quick reference.
     cat .type
     cat .id
     cat .json
-     
+    
     # Extract specific metadata fields (you may need `apt-get/yum install jq`)
     cat .json | jq .Response.SequencingStats
     cd ..
-   
+    
     # Get list of runs with yields above a specific threshold
     cat .json | jq '.Response.Items[] | select( .SequencingStats.YieldTotal > 100 )
         | { Name: .ExperimentName, Yield: .SequencingStats.YieldTotal }'
@@ -160,26 +182,26 @@ The script of each video is included here for quick reference.
 
 {% endstep %}
 
-{% step 8, ,  File upload (video coming soon)  %}
+{% step 8, null, File upload %} (video coming soon)
 
 Here is a quick step-by-step guide on how easy it is to upload a file to a new AppResult:
 
     # Mount your BaseSpace account
     mkdir BaseSpace
     basemount BaseSpace
-
+    
     # Create new project
     cd BaseSpace/Projects
     mkdir myNewProject
-
+    
     # Create new AppResult (the only entity able to store files other than fastq)
     cd myNewProject/AppResults
     mkdir myNewAppResult
     cd myNewAppResult
-
+    
     # Create a file there (or copy one with `cp`)
     echo "Hello BaseSpace" > Files/hello.txt
-
+    
     # Mark the container as "Complete"
     basemount-cmd mark-as-complete
     # (You can now navigate to your BaseSpace account in a browser
@@ -187,6 +209,9 @@ Here is a quick step-by-step guide on how easy it is to upload a file to a new A
 
 {% endstep %}
 
+
+
+<a name="Installation"></a>
 
 ## BaseMount Installation
 
@@ -253,6 +278,8 @@ BaseMount can be uninstalled with the following command:
 
 
 
+<a name="HardwareRequirements"></a>
+
 ## Minimum Hardware Requirements and System-Level Settings
 
 We have tested the current version of BaseMount *Alpha* under the following conditions:
@@ -279,6 +306,8 @@ Recommended ulimit thresholds:
 - Max locked memory: tested with `ulimit -l 64`, should be greater or equal to this value
 
 
+
+<a name="Mounting"></a>
 
 ## Mounting Your BaseSpace Account
 
@@ -326,11 +355,15 @@ Once authenticated, BaseMount will remember the API server URL for all subsequen
 
 
 
+<a name="Authentication"></a>
+
 ## Authentication
 
 The first time you run BaseMount, you will be directed to a web URL and asked to enter your BaseSpace user credentials. BaseMount will use these credentials to authenticate your interactions with BaseSpace. By default, the credentials are cached in your home directory and they can be password-encrypted for security, just like an ssh key.
 
 
+
+<a name="Unmounting"></a>
 
 ## Unmounting
 
@@ -348,6 +381,8 @@ In some circumstances, lazy unmount using `fusermount -uz <mount point>` may be 
 You can list the currently mounted directories using `mount | grep basemount`.
 
 
+
+<a name="DirectoryStructure"></a>
 
 ## Directory Structure
 
@@ -460,6 +495,8 @@ These metadata files are:
 
 
 
+<a name="DownloadingData"></a>
+
 ## Downloading Data
 
 In appresult and sample directories, `Files` sub-directories expose data files, which can we copied or used interactively.
@@ -546,6 +583,8 @@ In there you will find the usual BaseMount metadata special files (such as .json
 Note: This S3 URL is only valid for 7 days after it got generated by the API call used by BaseMount to create the Content/Url file.
 
 
+
+<a name="WriteMode"></a>
 
 ## Writing and Uploading data to BaseSpace
 
@@ -649,6 +688,8 @@ If you wish to choose a different name to organise your workspace more effective
 
 
 
+<a name="BasemountCmd"></a>
+
 ## The basemount-cmd tool
 
 Running `basemount-cmd` displays the list of available commands.
@@ -690,6 +731,8 @@ Note: Commands that are not listed here are "use at your own risk", and may disa
 
 
 
+<a name="Limitations"></a>
+
 ## Limitations of BaseMount *Alpha*
 
 Each new directory access made by BaseMount relies on the local FUSE device (/dev/fuse), the BaseSpace API and the user's credentials. This mechanism means that, as currently available, BaseMount does not support the following types of accesses:
@@ -701,38 +744,7 @@ Each new directory access made by BaseMount relies on the local FUSE device (/de
 
 
 
-## ChangeLog
-
-
-### Tue Mar 1 2016 - v0.12 Alpha
-- Write-mode: project and appresult creation, file upload
-- Properties can be viewed and edited
-- Improved documentation
-- Relaxed timeout for low bandwidth
-- Offers to create mount point when it doesn't exist
-- Offers to unmount if mount point refers to a mounted path
-- Unmount assistance, listing blocking processes and offering lazy-unmount
-- Raised RAM requirements to 1.5GB, allowing to proceed after confirmation prompt
-
-
-### Tue Jan 26 2016 - v0.11 Alpha
-- Proxy support
-- "Files" directories are not symlinks anymore
-- Run Files are automatically mounted, now that they load more interactively
-- .basemount directories for BaseSpaceCLI support
-- BSFS available as a plugin
-
-
-### Fri Jul 24 2015 - v0.1 Alpha
-- Initial release
-
-
-
-## Feedback
-
-Please visit our [BaseSpace google group](https://groups.google.com/forum/#!forum/basespace-developers) for inquiries and to submit feedback. 
-
-
+<a name="AppendixBsfsPlugin"></a>
 
 ## Appendix 1: The BSFS plugin
 
@@ -864,7 +876,7 @@ The default configuration used by BaseSpace Native Apps running on Amazon instan
 	LruCacheMode = SparseFile
 	PrefetchStrategy = NextBlock
 	CacheFolder = /data/input
-	CacheSizeLimit = 300000000000
+	CacheSizeLimit = 107374182400
 	BlockSize = 5242880
 	NumberOfBlocksToPurgeOnCacheFull = 20
 
@@ -872,6 +884,8 @@ The default configuration used by BaseSpace Native Apps running on Amazon instan
 These lines should be added to the end of the config file `/home/user/.basemount/default.cfg` (Note: replace "default" by the basemount config name you wish to configure).
 
 
+
+<a name="Troubleshooting"></a>
 
 ## Troubleshooting
 
@@ -934,6 +948,8 @@ For example `--cache-opts=2:4:512` would make BaseMount download 4MB blocks.
 A middle ground can be achieved with both options: `--threads=4 --cache-opt=2:8:512`
 
 
+
+<a name="FAQ"></a>
 
 ## Questions and Answers
 
@@ -1003,3 +1019,40 @@ You can discover which versions of BaseMount are available with the following co
     
     # Configure repository, then:
     sudo yum --showduplicates list basemount
+
+
+
+<a name="ChangeLog"></a>
+
+## ChangeLog
+
+
+### Tue Mar 1 2016 - v0.12 Alpha
+- Write-mode: project and appresult creation, file upload
+- Properties can be viewed and edited
+- Improved documentation
+- Relaxed timeout for low bandwidth
+- Offers to create mount point when it doesn't exist
+- Offers to unmount if mount point refers to a mounted path
+- Unmount assistance, listing blocking processes and offering lazy-unmount
+- Raised RAM requirements to 1.5GB, allowing to proceed after confirmation prompt
+
+
+### Tue Jan 26 2016 - v0.11 Alpha
+- Proxy support
+- "Files" directories are not symlinks anymore
+- Run Files are automatically mounted, now that they load more interactively
+- .basemount directories for BaseSpaceCLI support
+- BSFS available as a plugin
+
+
+### Fri Jul 24 2015 - v0.1 Alpha
+- Initial release
+
+
+
+<a name="Feedback"></a>
+
+## Feedback
+
+Please visit our [BaseSpace google group](https://groups.google.com/forum/#!forum/basespace-developers) for inquiries and to submit feedback. 
