@@ -93,12 +93,12 @@ The following table describes the elements:
 	<tr>
 		<td><code>&lt;x_pos&gt;</code></td>
 		<td>Numerical</td>
-		<td>Run number on instrument</td>
+		<td>X coordinate of cluster</td>
 	</tr>
 	<tr>
 		<td><code>&lt;y_pos&gt;</code></td>
 		<td>Numerical</td>
-		<td>X coordinate of cluster</td>
+		<td>Y coordinate of cluster</td>
 	</tr>
 	<tr>
 		<td><code>&lt;read&gt;</code></td>
